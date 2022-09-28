@@ -10,32 +10,92 @@ In this Assignment, we use the prototype constructor to add new methods to the A
 
 // MAP //
 Array.prototype.myMap = function(callbackFn) {
-  // Place your code here.
+  //  callbackFn(this[i],i,this) <- This is the function itself it stores the output
+  //  this[i] <- element of array
+  //  i <- index of array
+  //  this <- array itself
+  let map = []; // create temp array
+
+  for(let i = 0; i < this.length; i++){
+    map.push(callbackFn(this[i],i,this)); // push every result of the callback into the temp array
+  }
+  return map; //return array
 };
 
 // FILTER //
 Array.prototype.myFilter = function(callbackFn) {
-  // Place your code here.
+  //  callbackFn(this[i],i,this) <- This is the function itself it stores the output
+  //  this[i] <- element of array
+  //  i <- index of array
+  //  this <- array itself
+
+  let filtered = [];// create temp array
+  for(let i = 0; i < this.length; i++){
+    if(callbackFn(this[i],i,this)){ // push every element that is true according to the callback function
+      filtered.push(this[i]);
+    }
+  }
+  return filtered; //return array
 };
 
 // SOME //
 Array.prototype.mySome = function(callbackFn) {
-  // Place your code here.
+  //  callbackFn(this[i],i,this) <- This is the function itself it stores the output
+  //  this[i] <- element of array
+  //  i <- index of array
+  //  this <- array itself
+
+  for(let i = 0; i < this.length; i++){
+    if(callbackFn(this[i],i,this)){ // if a element like such exist for the array
+      return true; // return true
+    }
+  }
+  return false; // return false if none found
 };
 
 // EVERY //
 Array.prototype.myEvery = function(callbackFn) {
-  // Place your code here.
+  //  callbackFn(this[i],i,this) <- This is the function itself it stores the output
+  //  this[i] <- element of array
+  //  i <- index of array
+  //  this <- array itself
+  for(let i = 0; i < this.length; i++){
+    if( !callbackFn(this[i],i,this) ){ // if there is a element in the array that doesn't match the condition given by the callback
+      return false; // return false
+    }
+  }
+  return true; //everything matches the condition given by the callback
+
 };
 
 // REDUCE //
 Array.prototype.myReduce = function(callbackFn) {
+  //  callbackFn(this[i],i,this) <- This is the function itself or the produced outcome
+  //  this[i] <- element of array
+  //  i <- index of array
+  //  this <- array itself
   // Place your code here.
+  let sum = 0; // variable storing the sum
+
+  for(let i = 0; i < this.length; i++){ 
+    sum+= callbackFn(this[i],i,this); // add every callback function result to sum
+  }
+  return sum; // return sum
 };
 
 // INCLUDES //
 Array.prototype.myIncludes = function(searchElement) {
+  //  callbackFn(this[i],i,this) <- This is the function itself or the produced outcome
+  //  this[i] <- element of array
+  //  i <- index of array
+  //  this <- array itself
   // Place your code here.
+  for(let i = 0; i < this.length; i++){ //if the searched element is the array's element
+    if( searchElement == this[i]){
+      return true; // the element exist and return true
+    }
+  }
+  return false; //return false if element doesn't exist
 };
 
 // INDEXOF //
