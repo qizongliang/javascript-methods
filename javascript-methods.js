@@ -59,6 +59,7 @@ Array.prototype.myEvery = function(callbackFn) {
   //  this[i] <- element of array
   //  i <- index of array
   //  this <- array itself
+
   for(let i = 0; i < this.length; i++){
     if( !callbackFn(this[i],i,this) ){ // if there is a element in the array that doesn't match the condition given by the callback
       return false; // return false
@@ -74,7 +75,7 @@ Array.prototype.myReduce = function(callbackFn) {
   //  this[i] <- element of array
   //  i <- index of array
   //  this <- array itself
-  // Place your code here.
+
   let sum = 0; // variable storing the sum
 
   for(let i = 0; i < this.length; i++){ 
@@ -89,7 +90,7 @@ Array.prototype.myIncludes = function(searchElement) {
   //  this[i] <- element of array
   //  i <- index of array
   //  this <- array itself
-  // Place your code here.
+
   for(let i = 0; i < this.length; i++){ //if the searched element is the array's element
     if( searchElement == this[i]){
       return true; // the element exist and return true
@@ -100,7 +101,19 @@ Array.prototype.myIncludes = function(searchElement) {
 
 // INDEXOF //
 Array.prototype.myIndexOf = function(searchElement) {
-  // Place your code here.
+  //  callbackFn(this[i],i,this) <- This is the function itself or the produced outcome
+  //  this[i] <- element of array
+  //  i <- index of array
+  //  this <- array itself
+
+  for(let i = 0; i < this.length; i++){ //if the searched element is the array's element
+    if( searchElement == this[i]){
+      return i; // return index
+    }
+  }
+
+  return -1; //return -1 if the element is not found
+
 };
 
 // LASTINDEXOF //
