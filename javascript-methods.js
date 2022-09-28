@@ -135,7 +135,13 @@ Array.prototype.myLastIndexOf = function(searchElement) {
 
 // KEYS //
 Object.myKeys = function(object) {
-  // Place your code here.
+  let keys = [];
+  for(let prop in object){ // for every prop in the object
+    if(object.hasOwnProperty(prop)){ // if the property belong to the object
+      keys.push(prop); // push the prop to the array
+    }
+  }
+  return keys; // retrun the array
 };
 
 // VALUES //
