@@ -10,7 +10,6 @@ In this Assignment, we use the prototype constructor to add new methods to the A
 
 // MAP //
 Array.prototype.myMap = function(callbackFn) {
-  // Place your code here.
   //  callbackFn(this[i],i,this) <- This is the function itself storing the output
   //  this[i] <- element of array
   //  i <- index of array
@@ -25,7 +24,18 @@ Array.prototype.myMap = function(callbackFn) {
 
 // FILTER //
 Array.prototype.myFilter = function(callbackFn) {
-  // Place your code here.
+  //  callbackFn(this[i],i,this) <- This is the function itself
+  //  this[i] <- element of array
+  //  i <- index of array
+  //  this <- array itself
+
+  let filtered = [];// create temp array
+  for(let i = 0; i < this.length; i++){
+    if(callbackFn(this[i],i,this)){ // push every element that is true according to the callback function
+      filtered.push(this[i]);
+    }
+  }
+  return filtered; //return array
 };
 
 // SOME //
