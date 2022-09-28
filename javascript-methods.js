@@ -70,7 +70,17 @@ Array.prototype.myEvery = function(callbackFn) {
 
 // REDUCE //
 Array.prototype.myReduce = function(callbackFn) {
+  //  callbackFn(this[i],i,this) <- This is the function itself or the produced outcome
+  //  this[i] <- element of array
+  //  i <- index of array
+  //  this <- array itself
   // Place your code here.
+  let sum = 0; // variable storing the sum
+
+  for(let i = 0; i < this.length; i++){ // if 
+    sum+= callbackFn(this[i],i,this); // add every callback function result to sum
+  }
+  return sum; // return sum
 };
 
 // INCLUDES //
