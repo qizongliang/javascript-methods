@@ -118,7 +118,19 @@ Array.prototype.myIndexOf = function(searchElement) {
 
 // LASTINDEXOF //
 Array.prototype.myLastIndexOf = function(searchElement) {
-  // Place your code here.
+  //  callbackFn(this[i],i,this) <- This is the function itself or the produced outcome
+  //  this[i] <- element of array
+  //  i <- index of array
+  //  this <- array itself
+
+  let index = -1;
+  for(let i = 0; i < this.length; i++){ //if the searched element is the array's element
+    if( searchElement == this[i]){ // set the index to the index of last element is the same
+      index = i;
+    }
+  }
+
+  return index; //return -1 if the element is not found return index if last element is found
 };
 
 // KEYS //
