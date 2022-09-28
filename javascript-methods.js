@@ -55,7 +55,17 @@ Array.prototype.mySome = function(callbackFn) {
 
 // EVERY //
 Array.prototype.myEvery = function(callbackFn) {
-  // Place your code here.
+  //  callbackFn(this[i],i,this) <- This is the function itself it stores the output
+  //  this[i] <- element of array
+  //  i <- index of array
+  //  this <- array itself
+  for(let i = 0; i < this.length; i++){
+    if( !callbackFn(this[i],i,this) ){ // if there is a element in the array that doesn't match the condition given by the callback
+      return false; // return false
+    }
+  }
+  return true; //everything matches the condition given by the callback
+
 };
 
 // REDUCE //
