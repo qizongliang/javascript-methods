@@ -146,5 +146,12 @@ Object.myKeys = function(object) {
 
 // VALUES //
 Object.myValues = function(object) {
-  // Place your code here.
+  const keysArr = Object.myKeys(object);// get a key array of the object
+  let values = []; // temp array
+
+  keysArr.forEach((key) => { // arrow function that takes every key of the array and push the value of all keys
+    values.push(object[key]); 
+  });
+
+  return values;// return value array.
 };
