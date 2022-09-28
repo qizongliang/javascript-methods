@@ -77,7 +77,7 @@ Array.prototype.myReduce = function(callbackFn) {
   // Place your code here.
   let sum = 0; // variable storing the sum
 
-  for(let i = 0; i < this.length; i++){ // if 
+  for(let i = 0; i < this.length; i++){ 
     sum+= callbackFn(this[i],i,this); // add every callback function result to sum
   }
   return sum; // return sum
@@ -85,7 +85,17 @@ Array.prototype.myReduce = function(callbackFn) {
 
 // INCLUDES //
 Array.prototype.myIncludes = function(searchElement) {
+  //  callbackFn(this[i],i,this) <- This is the function itself or the produced outcome
+  //  this[i] <- element of array
+  //  i <- index of array
+  //  this <- array itself
   // Place your code here.
+  for(let i = 0; i < this.length; i++){ //if the searched element is the array's element
+    if( searchElement == this[i]){
+      return true; // the element exist and return true
+    }
+  }
+  return false; //return false if element doesn't exist
 };
 
 // INDEXOF //
